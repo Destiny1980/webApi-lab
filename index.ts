@@ -21,10 +21,9 @@ router.get('/films',async(ctx: RouterContext, next:any)=> {
 });
 router.get('/films/id',async(ctx: RouterContext, next:any)=> {
     const id  = ctx.params.id;
-    films.forEach(f, i) => {
+    films.forEach（(f, i)） => {
         if(id == f.id){
-    
-    ctx.body = films[i];
+        ctx.body = films[i];
         }
     })
 })
@@ -39,9 +38,9 @@ router.post('/films',async(ctx: RouterContext, next:any)=> {
 router.put('/films',async(ctx: RouterContext, next:any)=> {
     const data : any = ctx.request.body;
     films.forEach((f) => {
-        if(data.id == films.id){
+        if(data.id == f.id){
             f.title = data.title;
-            f.duartion = data.duartion;
+            f.duration = data.duration;
     }
 
     ctx.body = films;
